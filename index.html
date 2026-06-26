@@ -244,6 +244,9 @@
                 <!-- Formspree Contact Form -->
                 <div class="contact-form-wrapper">
                     <form action="https://formspree.io/f/xkoljalk" method="POST" class="contact-form">
+                        <!-- Redirect to custom success page -->
+                        <input type="hidden" name="_next" value="https://veloxlabs.vercel.app/success.html">
+                        
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" required placeholder="John Doe">
