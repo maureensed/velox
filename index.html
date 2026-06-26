@@ -243,9 +243,7 @@
 
                 <!-- Formspree Contact Form -->
                 <div class="contact-form-wrapper">
-                    <form action="https://formspree.io/f/xkoljalk" method="POST" class="contact-form">
-                        <!-- Redirect to custom success page -->
-                        <input type="hidden" name="_next" value="https://veloxlabs.vercel.app/success.html">
+                    <form id="contactForm" class="contact-form">
                         
                         <div class="form-group">
                             <label for="name">Your Name</label>
@@ -267,6 +265,32 @@
                             Send Message <i class="fa-solid fa-paper-plane"></i>
                         </button>
                     </form>
+                    <script>
+                        document.getElementById('contactForm').addEventListener('submit', function(e) {
+                            e.preventDefault(); // Stop the default generic Formspree redirect
+                            
+                            const formData = new FormData(this);
+                            
+                            fetch('https://formspree.io/f/xkoljalk', {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'Accept': 'application/json'
+                                }
+                            })
+                            .then(response => {
+                                if (response.ok) {
+                                    // Flawlessly route them to our custom premium asset for free!
+                                    window.location.href = 'success.html';
+                                } else {
+                                    alert('Transmission error. Please try sending again.');
+                                }
+                            })
+                            .catch(error => {
+                                alert('Transmission error. Please check your connection.');
+                            });
+                        });
+                    </script>
                 </div>
             </div>
         </section>
