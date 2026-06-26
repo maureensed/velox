@@ -241,32 +241,26 @@
                     </div>
                 </div>
 
-                <!-- Formspree-optimized Contact Form (Vanilla JS/AJAX) -->
+                <!-- Formspree Contact Form -->
                 <div class="contact-form-wrapper">
-                    <div data-fs-success class="form-success" style="display: none; padding: 1rem; margin-bottom: 1rem; border-radius: var(--border-radius-sm); background-color: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); font-weight: 600; text-align: center;">Thanks for reaching out! We'll be in touch soon.</div>
-                    <div data-fs-error class="form-error" style="display: none; padding: 1rem; margin-bottom: 1rem; border-radius: var(--border-radius-sm); background-color: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); font-weight: 600; text-align: center;">There was an error submitting the form. Please try again.</div>
-
-                    <form id="contact-form" class="contact-form">
+                    <form action="https://formspree.io/f/xkoljalk" method="POST" class="contact-form">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe" data-fs-field>
-                            <span data-fs-error="name" style="color: #ef4444; font-size: 0.85rem; margin-top: 0.25rem;"></span>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required placeholder="john@example.com" data-fs-field>
-                            <span data-fs-error="email" style="color: #ef4444; font-size: 0.85rem; margin-top: 0.25rem;"></span>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" rows="5" required
-                                placeholder="Tell me about your project..." data-fs-field></textarea>
-                            <span data-fs-error="message" style="color: #ef4444; font-size: 0.85rem; margin-top: 0.25rem;"></span>
+                                placeholder="Tell me about your project..."></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary btn-block" data-fs-submit-btn>
+                        <button type="submit" class="btn btn-primary btn-block">
                             Send Message <i class="fa-solid fa-paper-plane"></i>
                         </button>
                     </form>
@@ -286,12 +280,6 @@
             </div>
         </div>
     </footer>
-    <!-- Formspree Scripts -->
-    <script>
-        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-        formspree('initForm', { formElement: '#contact-form', formId: 'xkoljalk' });
-    </script>
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 
 </html>
